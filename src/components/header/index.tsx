@@ -1,11 +1,16 @@
 import React from "react";
 
 import { Logo } from "@components";
+import { Navigation } from "./navigation";
+import { Actions } from "./actions";
+import { Wrapper } from "./styled";
 
 export const Header: React.FC = () => {
-  return (
-    <div className="text-center" style={{ backgroundColor: "#20232a" }}>
-      <Logo />
-    </div>
-  );
+    return (
+        <Wrapper>
+            <Logo />
+            <Navigation />
+            <Actions />
+        </Wrapper>
+    );
 };

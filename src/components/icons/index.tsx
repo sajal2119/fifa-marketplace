@@ -5,4 +5,6 @@ export { default as PankodIcon } from "./PankodIcon";
 export { default as TwitterIcon } from "./TwitterIcon";
 export { default as YoutubeIcon } from "./YoutubeIcon";
 export { default as SunIcon } from "./SunIcon";
+export { default as FifaLogo } from "./FifaLogo";
+export { default as TicketIcon } from "./Ticket";
 export { default as MoonIcon } from "./MoonIcon";

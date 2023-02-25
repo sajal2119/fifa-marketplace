@@ -1,8 +1,13 @@
 import React from "react";
-import { Button as BaseButton, ButtonProps } from "react-bootstrap";
+import { Button as BaseButton } from "react-bootstrap";
+import { Container } from "./styled";
 
-export type IButton = ButtonProps;
+export type IButton = any;
 
 export const Button: React.FC<IButton> = ({ ...rest }) => {
-  return <BaseButton {...rest} />;
+    return (
+        <Container>
+            <BaseButton {...rest} />
+        </Container>
+    );
 };
