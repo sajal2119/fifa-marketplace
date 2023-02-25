@@ -1,85 +1,230 @@
 {
-  "name": "collect-fifa",
-  "plugins": [
+  "total": 39,
+  "listings": [
     {
-      "name": "React-Bootstrap",
-      "description": "Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit.",
-      "url": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+      "uniqueCode": "D04-29",
+      "title": "Soviet Union",
+      "subtitle": "1986 FIFA World Cup Mexico™  \nURS 6 - 0 HUN, **Goal: Sergey Rodionov 80'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/b78de2c2-7622-471d-b1f7-868c47a02c3d.jpeg",
+      "lowestPrice": 100,
+      "latestCreatedAt": "2023-02-25T19:56:21.820Z",
+      "rarity": {
+        "code": "10",
+        "color": "#27CFF7",
+        "name": "Common"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "d3417bc2-6070-452d-860b-7810831c90d2",
+        "slug": "series-1-archive-2-common",
+        "name": "Common"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Styled Components",
-      "description": "Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.",
-      "url": "https://styled-components.com/docs"
+      "uniqueCode": "D04-01",
+      "title": "Germany",
+      "subtitle": "2014 FIFA World Cup Brazil™  \nGER 1 - 0 ARG, **Goal: Mario Gotze 113'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/2c5873cf-9085-425b-a457-ba32d1228bd4.jpeg",
+      "lowestPrice": 799900,
+      "latestCreatedAt": "2023-02-25T10:29:53.482Z",
+      "rarity": {
+        "code": "40",
+        "color": "#DDBE5E",
+        "name": "Iconic"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "c9bff04d-6378-4044-9566-947071700941",
+        "slug": "series-1-archive-2-iconic",
+        "name": "Iconic"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Fetch",
-      "description": "Next.js has a built-in polyfill for the fetch API. You don't need to worry about using it on either server or client side.",
-      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+      "uniqueCode": "D04-35",
+      "title": "England",
+      "subtitle": "2006 FIFA World Cup Germany™  \nENG 0 - 0 POR, **Save: Paul Robinson 78'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/454346b4-7565-471f-bfaa-0780be7a140d.jpeg",
+      "lowestPrice": 100,
+      "latestCreatedAt": "2023-02-23T16:27:27.859Z",
+      "rarity": {
+        "code": "10",
+        "color": "#27CFF7",
+        "name": "Common"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "d3417bc2-6070-452d-860b-7810831c90d2",
+        "slug": "series-1-archive-2-common",
+        "name": "Common"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Axios",
-      "description": "Promise based HTTP client for the browser and node.js.",
-      "url": "https://github.com/axios/axios"
+      "uniqueCode": "D04-27",
+      "title": "Sweden",
+      "subtitle": "1978 FIFA World Cup Argentina™  \nAUT 1 - 0 SWE, **Save: Ronnie Hellstrom 71'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/7bae0b99-2007-4cae-8a12-976126d093a7.jpeg",
+      "lowestPrice": 100,
+      "latestCreatedAt": "2023-02-22T06:31:17.808Z",
+      "rarity": {
+        "code": "10",
+        "color": "#27CFF7",
+        "name": "Common"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "d3417bc2-6070-452d-860b-7810831c90d2",
+        "slug": "series-1-archive-2-common",
+        "name": "Common"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Storybook",
-      "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue, Angular, and more. It makes building stunning UIs organized and efficient.",
-      "url": "https://storybook.js.org/docs/react/get-started/introduction"
+      "uniqueCode": "D04-17",
+      "title": "Morocco",
+      "subtitle": "2018 FIFA World Cup Russia™  \nMAR 0 - 1 IRN, **Save: Munir Mohamedi 42'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/474fa218-21fd-4d3f-bae9-0fbde49b1f9a.jpeg",
+      "lowestPrice": 499,
+      "latestCreatedAt": "2023-02-21T16:31:12.806Z",
+      "rarity": {
+        "code": "20",
+        "color": "#FE36FE",
+        "name": "Rare"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "4bb308f6-8d34-4613-8980-4f4912bbe113",
+        "slug": "series-1-archive-2-rare",
+        "name": "Rare"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "SVGR",
-      "description": "Transform SVGs into React components.",
-      "url": "https://react-svgr.com/docs/getting-started/"
+      "uniqueCode": "D04-13",
+      "title": "Spain",
+      "subtitle": "1990 FIFA World Cup Italy™  \nKOR 1 - 3 ESP, **Goal: Michel Gonzalez 24'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/72785747-2295-4b57-8d8f-cf35c8418260.jpeg",
+      "lowestPrice": 425,
+      "latestCreatedAt": "2023-02-21T11:45:30.855Z",
+      "rarity": {
+        "code": "20",
+        "color": "#FE36FE",
+        "name": "Rare"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "4bb308f6-8d34-4613-8980-4f4912bbe113",
+        "slug": "series-1-archive-2-rare",
+        "name": "Rare"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Environment Variables",
-      "description": "Use environment variables in your next.js project for server side, client or both.",
-      "url": "https://github.com/vercel/next.js/tree/canary/examples/environment-variables"
+      "uniqueCode": "D04-05",
+      "title": "Uruguay",
+      "subtitle": "2018 FIFA World Cup Russia™  \nURU 3 - 0 RUS, **Goal: Luis Suarez 10'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/7b371ac4-93d2-4f03-ad84-1443d2a5bf03.jpeg",
+      "lowestPrice": 3900,
+      "latestCreatedAt": "2023-02-21T11:44:48.004Z",
+      "rarity": {
+        "code": "30",
+        "color": "#8055FE",
+        "name": "Epic"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "9e7cb51f-91a8-4073-8a4a-e70109c652d0",
+        "slug": "series-1-archive-2-epic",
+        "name": "Epic"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Reverse Proxy",
-      "description": "Proxying some URLs can be useful when you have a separate API backend development server and you want to send API requests on the same domain.",
-      "url": "https://webpack.js.org/configuration/dev-server/#devserverproxy"
+      "uniqueCode": "D04-33",
+      "title": "Belgium",
+      "subtitle": "2002 FIFA World Cup Korea/Japan™  \nBEL 3 - 2 RUS, **Goal: Wesley Sonck 78'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/9e53e49c-d998-4c23-8b23-04e63ab8fd56.jpeg",
+      "lowestPrice": 100,
+      "latestCreatedAt": "2023-02-20T22:19:01.321Z",
+      "rarity": {
+        "code": "10",
+        "color": "#27CFF7",
+        "name": "Common"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "d3417bc2-6070-452d-860b-7810831c90d2",
+        "slug": "series-1-archive-2-common",
+        "name": "Common"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     },
     {
-      "name": "Bundle Analyzer",
-      "description": "Use webpack-bundle-analyzer in your Next.js project. Visualize size of webpack output files with an interactive zoomable treemap.",
-      "url": "https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer"
-    },
-    {
-      "name": "SWR",
-      "description": "React Hooks library for data fetching from Vercel",
-      "url": "https://swr.vercel.app/"
-    },
-    {
-      "name": "React Redux",
-      "description": "Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.",
-      "url": "https://redux.js.org/introduction/getting-started"
-    },
-    {
-      "name": "next-i18next",
-      "description": "next-i18next is a plugin for Next.js projects that allows you to get translations up and running quickly and easily, while fully supporting SSR, multiple namespaces with codesplitting, etc.",
-      "url": "https://github.com/isaachinman/next-i18next"
-    },
-    {
-      "name": "ESLint",
-      "description": "A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.",
-      "url": "https://eslint.org/docs/user-guide/getting-started"
-    },
-    {
-      "name": "Prettier",
-      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
-      "url": "https://prettier.io/docs/en/index.html"
-    },
-    {
-      "name": "lint-staged",
-      "description": " The concept of lint-staged is to run configured linter (or other) tasks on files that are staged in git.",
-      "url": "https://github.com/okonet/lint-staged"
-    },
-    {
-      "name": "Enzyme",
-      "description": "Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output.",
-      "url": "https://enzymejs.github.io/enzyme/"
+      "uniqueCode": "D04-37",
+      "title": "Cameroon",
+      "subtitle": "2010 FIFA World Cup South Africa™  \nCMR 1 - 2 NED, **Goal: Samuel Eto'o 65'**",
+      "image": "https://storage.googleapis.com/prod-fifa-cms-storage/9129e18b-0b48-4e44-adab-301cce6e554f.jpeg",
+      "lowestPrice": 100,
+      "latestCreatedAt": "2023-02-20T22:17:02.227Z",
+      "rarity": {
+        "code": "10",
+        "color": "#27CFF7",
+        "name": "Common"
+      },
+      "languageCode": "en-UK",
+      "set": {
+        "id": "d3417bc2-6070-452d-860b-7810831c90d2",
+        "slug": "series-1-archive-2-common",
+        "name": "Common"
+      },
+      "collection": {
+        "id": "db1c746c-294a-4e58-a98d-77ab01d19d28",
+        "slug": "series-1-archives-2",
+        "name": "Series 1: FIFA Archives Drop 2"
+      },
+      "packSlug": "archives-2-drop"
     }
   ]
 }

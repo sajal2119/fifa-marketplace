@@ -2,9 +2,13 @@ import React from "react";
 import { NavContainer, NavLink } from "./styled";
 import Nav from "react-bootstrap/Nav";
 
-export const Navigation: React.FC = () => {
+interface OwnProps {
+    className: string;
+}
+
+export const Navigation: React.FC<OwnProps> = ({ className }) => {
     return (
-        <NavContainer>
+        <NavContainer className={className}>
             <Nav activeKey="/MARKETPLACE">
                 <Nav.Item>
                     <NavLink href="/">DROPS</NavLink>
@@ -23,8 +27,8 @@ export const Navigation: React.FC = () => {
                     <NavLink eventKey="CHALLENGES" href="/">
                         CHALLENGES
                     </NavLink>
-          </Nav.Item>
-          <Nav.Item>
+                </Nav.Item>
+                <Nav.Item>
                     <NavLink eventKey="CHALLENGES" href="/">
                         FIFA+
                     </NavLink>

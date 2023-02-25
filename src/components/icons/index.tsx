@@ -8,3 +8,5 @@ export { default as SunIcon } from "./SunIcon";
 export { default as FifaLogo } from "./FifaLogo";
 export { default as TicketIcon } from "./Ticket";
 export { default as MoonIcon } from "./MoonIcon";
+export { default as UserIcon } from "./UserIcon";
+export { default as HamburgerIcon } from "./HamburgerIcon";
