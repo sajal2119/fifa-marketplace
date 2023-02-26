@@ -1,15 +1,15 @@
 import React from "react";
-import { NavContainer, NavLink } from "./styled";
+import { NavContainer, NavLink, Wrapper } from "./styled";
 import Nav from "react-bootstrap/Nav";
 
 interface OwnProps {
-    className: string;
+    className?: string;
 }
 
 export const Navigation: React.FC<OwnProps> = ({ className }) => {
     return (
-        <NavContainer className={className}>
-            <Nav activeKey="/MARKETPLACE">
+        <NavContainer className={className || ""}>
+            <Wrapper activeKey="/MARKETPLACE">
                 <Nav.Item>
                     <NavLink href="/">DROPS</NavLink>
                 </Nav.Item>
@@ -33,7 +33,7 @@ export const Navigation: React.FC<OwnProps> = ({ className }) => {
                         FIFA+
                     </NavLink>
                 </Nav.Item>
-            </Nav>
+            </Wrapper>
         </NavContainer>
     );
 };
