@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Wrapper, Header, Main, Footer, Cards } from "@components";
+import { Wrapper, Header, Main, Footer } from "@components";
 
 const Home: React.FC = () => {
     return (
@@ -8,7 +8,6 @@ const Home: React.FC = () => {
             <Wrapper />
             <Header />
             <Main />
-            <Cards />
             <Footer />
         </div>
     );

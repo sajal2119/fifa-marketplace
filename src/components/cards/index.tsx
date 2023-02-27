@@ -1,5 +1,5 @@
 import React from "react";
-import data from "@public/meta.json";
+import { useSelector } from "react-redux";
 import {
     CardContainer,
     Image,
@@ -15,10 +15,11 @@ import {
 import { Container, Row, Col } from "react-bootstrap";
 
 export const Cards: React.FC = () => {
+    const listings = useSelector((state: any) => state.listing.list);
     return (
         <Container className="my-5 flex-grow-1">
             <Row>
-                {(data?.listings ?? []).map((card) => (
+                {listings.map((card) => (
                     <Col md={4} key={card.uniqueCode} className="mb-3">
                         <CardContainer>
                             <Image src={card.image} />

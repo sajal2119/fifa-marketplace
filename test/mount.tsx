@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { mount as mountBase, MountRendererProps, ReactWrapper } from "enzyme";
 
 import { Provider } from "react-redux";
-import store from "@redux/store";
+import store from "src/redux-copy/store";
 
 /**
  * Custom renderer example with enzyme

@@ -56,10 +56,10 @@
         "src/components/icons"
       ],
       "@redux/*": [
-        "src/redux/*"
+        "src/redux-copy/*ad/*"
       ],
       "@redux": [
-        "src/redux"
+        "src/redux-copy-bad"
       ],
       "@i18n": [
         "./i18n"
