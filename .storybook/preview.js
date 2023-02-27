@@ -6,21 +6,21 @@ import { light } from "../src/definitions/styled-components/light";
 import { dark } from "../src/definitions/styled-components/dark";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: "^on[A-Z].*" },
 };
 
 const lightTheme = {
-  name: "LIGHT",
-  ...light,
+    name: "LIGHT",
+    ...light,
 };
 
 const darkTheme = {
-  name: "DARK",
-  ...dark,
+    name: "DARK",
+    ...dark,
 };
 
 export const getAllThemes = () => {
-  return [lightTheme, darkTheme];
+    return [lightTheme, darkTheme];
 };
 
 addDecorator(withThemesProvider(getAllThemes()));

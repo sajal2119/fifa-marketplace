@@ -52,7 +52,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
                     ...data,
                 },
             });
-        }, 1000);
+        }, 100000);
     };
 
     return (

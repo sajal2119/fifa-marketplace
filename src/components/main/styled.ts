@@ -16,6 +16,4 @@ export const Label = styled.div`
     font-weight: 600;
 `;
 
-export const SortContainer = styled.div`
-    
-`;
+export const SortContainer = styled.div``;

@@ -13,18 +13,18 @@ import store from "src/redux-copy/store";
  */
 
 const AllTheProviders = ({ children }) => {
-  return (
-    <>
-      <Provider store={store}>{children}</Provider>
-    </>
-  );
+    return (
+        <>
+            <Provider store={store}>{children}</Provider>
+        </>
+    );
 };
 
 const mount: (node: ReactNode, options?: MountRendererProps) => ReactWrapper = (
-  node,
-  options
+    node,
+    options,
 ) => {
-  return mountBase(<AllTheProviders>{node}</AllTheProviders>, options);
+    return mountBase(<AllTheProviders>{node}</AllTheProviders>, options);
 };
 
 // override render method
