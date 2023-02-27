@@ -16,4 +16,12 @@ export const Label = styled.div`
     font-weight: 600;
 `;
 
+export const ListingWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 1.5rem auto;
+`;
+
 export const SortContainer = styled.div``;

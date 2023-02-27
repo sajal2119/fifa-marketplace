@@ -1,9 +1,9 @@
 import mount from "@test/mount";
 
-import { Main } from "./index";
+import { Tabs } from "./index";
 
-describe("Main component testing with enzyme", () => {
-    const component = mount(<Main />);
+describe("Tabs component testing with enzyme", () => {
+    const component = mount(<Tabs />);
 
     it("renders without crashing", () => {
         expect(component).toBeTruthy();

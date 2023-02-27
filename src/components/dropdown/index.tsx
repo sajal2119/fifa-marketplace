@@ -52,16 +52,14 @@ export const CustomDropdown: React.FC<OwnProps> = ({
                     ...data,
                 },
             });
-        }, 100000);
+        }, 1000);
     };
 
     return (
         <Dropdown className={className || ""} onSelect={onChange}>
-            <DropdownToggle
-                variant="success"
-                id="dropdown-basic"
-            ></DropdownToggle>
-            {selectedOption[0].label}
+            <DropdownToggle variant="success" id="custom-dropdown">
+                {selectedOption[0].label}
+            </DropdownToggle>
             <DropdownMenu>
                 {options.map((option) => (
                     <DropdownItem

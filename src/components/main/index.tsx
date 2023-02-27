@@ -1,7 +1,14 @@
 import { CustomDropdown } from "@components/dropdown";
 import React from "react";
 import { Cards } from "@components/cards";
-import { Container, Label, LabelWrapper, SortContainer } from "./styled";
+import {
+    Container,
+    Label,
+    LabelWrapper,
+    ListingWrapper,
+    SortContainer,
+} from "./styled";
+import { Filters } from "@components/filters";
 
 export const Main: React.FC = () => {
     return (
@@ -30,7 +37,10 @@ export const Main: React.FC = () => {
                     />
                 </SortContainer>
             </LabelWrapper>
-            <Cards />
+            <ListingWrapper>
+                <Filters />
+                <Cards />
+            </ListingWrapper>
         </Container>
     );
 };
