@@ -12,8 +12,8 @@
   ],
   "env": {
     "node": true,
-    "browser": true,
-    "amd": true
+    "amd": true,
+    "browser": true
   },
   "extends": [
     "eslint:recommended",
