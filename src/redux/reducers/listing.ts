@@ -4,14 +4,22 @@ import {
     CHANGE_RARITIES,
     LIST_FETCHED,
     CHANGE_PAGE_NUMBER,
+    CHANGE_PRICE_RANGE,
+    CHANGE_SEARCH_TERM,
 } from "../actions/actionTypes";
 import { getAllValuesFromUrl, getValueFromUrl } from "../utils/functions";
 import {
+    MAX_PRICE,
+    MAX_PRICE_FILTER,
+    MIN_PRICE,
+    MIN_PRICE_FILTER,
     PACK_SLUGS_FILTER,
     PAGE_NUMBER,
     PAGE_NUMBER_FILTER,
     PAGE_SIZE,
     RARITIES_FILTER,
+    SEARCH_TERM,
+    SEARCH_TERM_FILTER,
     SORT_BY,
     SORT_BY_FILTER,
     SORT_DIRECTION,
@@ -24,11 +32,17 @@ const sortDirectionFilter = getValueFromUrl(SORT_DIRECTION_FILTER);
 const raritiesFilter = getAllValuesFromUrl(RARITIES_FILTER);
 const packSlusFilter = getAllValuesFromUrl(PACK_SLUGS_FILTER);
 const pageNumberFilter = getValueFromUrl(PAGE_NUMBER_FILTER);
+const minPriceFilter = getValueFromUrl(MIN_PRICE_FILTER);
+const maxPriceFilter = getValueFromUrl(MAX_PRICE_FILTER);
+const searchTermFilter = getValueFromUrl(SEARCH_TERM_FILTER);
 
 const initialState = {
     fetchingList: false,
     total: data.total,
     list: data.list,
+    searchTerm: searchTermFilter || SEARCH_TERM,
+    minPrice: Number(minPriceFilter || MIN_PRICE),
+    maxPrice: Number(maxPriceFilter || MAX_PRICE),
     pageSize: PAGE_SIZE,
     pageNumber: pageNumberFilter || PAGE_NUMBER,
     rarities: raritiesFilter || [],
@@ -70,6 +84,23 @@ export default (state = initialState, action) => {
                 ...state,
                 list: [],
                 pageNumber: action.payload.pageNumber,
+                fetchingList: true,
+            };
+        case CHANGE_PRICE_RANGE:
+            return {
+                ...state,
+                list: [],
+                minPrice: action.payload.minPrice,
+                maxPrice: action.payload.maxPrice,
+                pageNumber: PAGE_NUMBER,
+                fetchingList: true,
+            };
+        case CHANGE_SEARCH_TERM:
+            return {
+                ...state,
+                list: [],
+                searchTerm: action.payload.searchTerm,
+                pageNumber: PAGE_NUMBER,
                 fetchingList: true,
             };
         case LIST_FETCHED:

@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { PaginationUnit, PaginationWrap, Wrapper } from "./styled";
 import data from "@public/meta.json";
-import { updateValueInSearch } from "@redux/utils/functions";
+import { updateValueInQuery } from "@redux/utils/functions";
 import { PAGE_NUMBER, PAGE_NUMBER_FILTER } from "@redux/defaults";
 import { CHANGE_PAGE_NUMBER, LIST_FETCHED } from "@redux/actions/actionTypes";
 
@@ -20,7 +20,7 @@ export const Pagination: React.FC<OwnProps> = ({ className }) => {
 
     const onChange = async (eventKey: string | null) => {
         const name = PAGE_NUMBER_FILTER;
-        const params = updateValueInSearch(name, eventKey || PAGE_NUMBER);
+        const params = updateValueInQuery(name, eventKey || PAGE_NUMBER);
 
         router.push({
             pathname: location.pathname,

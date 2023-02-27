@@ -24,7 +24,8 @@ export const PaginationUnit = styled(Pagination.Item)`
     }
 
     > span {
-        border-radius: 16px !important;
+        background-color: rgb(26, 45, 104) !important;
+        border-radius: 4px !important;
     }
 
     > a:hover {

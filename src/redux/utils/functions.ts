@@ -22,7 +22,7 @@ export const getAllValuesFromUrl = (input: string) => {
     return targetProp === undefined ? [] : targetProp;
 };
 
-export const updateValueInSearch = (
+export const updateValueInQuery = (
     name: string,
     value: any,
     isArray = false,
@@ -47,6 +47,30 @@ export const updateValueInSearch = (
             params.append(name, element);
         }
     } else {
+        params.append(name, value);
+    }
+
+    return params.toString();
+};
+
+export const updateObjectInQuery = (obj: Record<string, string | number>) => {
+    if (typeof window === "undefined" || !window) {
+        return null;
+    }
+
+    const params = new URLSearchParams(window?.location?.search);
+    const keys = Object.keys(obj);
+    params.delete(PAGE_NUMBER_FILTER);
+
+    for (let index = 0; index < keys.length; index++) {
+        const name = keys[index];
+        const value = obj[name];
+        const targetProp = params.get(name);
+
+        if (targetProp !== undefined) {
+            params.delete(name);
+        }
+
         params.append(name, value);
     }
 

@@ -2,7 +2,7 @@ import { Tabs } from "@components/tabs";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { updateValueInSearch } from "@redux/utils/functions";
+import { updateValueInQuery } from "@redux/utils/functions";
 import { FilterLabel, FilterUnit, Wrapper } from "./styled";
 import data from "@public/meta.json";
 import {
@@ -10,6 +10,8 @@ import {
     CHANGE_RARITIES,
     LIST_FETCHED,
 } from "@redux/actions/actionTypes";
+import { SearchInput } from "@components/searchInput";
+import { PriceRange } from "@components/priceRange";
 
 export const Filters: React.FC = () => {
     const dispatch = useDispatch();
@@ -33,7 +35,7 @@ export const Filters: React.FC = () => {
         }
         payload[name] = newValue;
 
-        const params = updateValueInSearch(name, newValue, true);
+        const params = updateValueInQuery(name, newValue, true);
 
         router.push({
             pathname: location.pathname,
@@ -57,7 +59,11 @@ export const Filters: React.FC = () => {
     return (
         <Wrapper>
             <FilterUnit>
+                <SearchInput />
+            </FilterUnit>
+            <FilterUnit>
                 <FilterLabel>Price</FilterLabel>
+                <PriceRange />
             </FilterUnit>
             <FilterUnit>
                 <FilterLabel>Rarity</FilterLabel>

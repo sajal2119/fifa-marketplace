@@ -3,12 +3,29 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 export const DropdownToggle = styled(Dropdown.Toggle)`
     background: transparent;
+    border-radius: 2px;
+
+    &:hover {
+        background: transparent;
+    }
 `;
 
 export const DropdownMenu = styled(Dropdown.Menu)`
-    background: transparent;
+    background: rgb(2, 15, 42);
+    color: white;
+    border-radius: 2px;
+    padding: 0px;
+    border: 1px solid rgb(26, 45, 104);
 `;
 
 export const DropdownItem = styled(Dropdown.Item)`
     background: transparent;
+    color: white;
+    border-top: 1px solid rgb(26, 45, 104);
+    padding: 12px 0px 12px 16px;
+
+    &.active {
+        background: transparent;
+        color: rgb(0, 184, 255);
+    }
 `;
