@@ -3,7 +3,7 @@ import Badge from "react-bootstrap/Badge";
 
 interface BadgeUnitProps {
     color: string;
-    filled?: boolean;
+    filled: boolean | number;
 }
 
 export const Wrapper = styled.div`
@@ -28,7 +28,10 @@ export const Wrapper = styled.div`
     }
 `;
 
-export const BadgeUnit = styled(Badge)<{ color: string; filled: boolean }>`
+export const BadgeUnit = styled(Badge)<{
+    color: string;
+    filled: boolean | number;
+}>`
     display: flex;
     flex-direction: column;
     align-items: flex-start;

@@ -1,3 +1,5 @@
+import { PAGE_NUMBER_FILTER } from "@redux/defaults";
+
 export const getValueFromUrl = (input: string) => {
     if (typeof window === "undefined" || !window) {
         return null;
@@ -30,6 +32,8 @@ export const updateValueInSearch = (
     }
 
     const params = new URLSearchParams(window?.location?.search);
+    params.delete(PAGE_NUMBER_FILTER);
+
     const targetProp = params.get(name);
 
     if (targetProp !== undefined) {

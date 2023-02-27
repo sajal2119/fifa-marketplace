@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface BadgeUnitProps {
+    color: string;
+}
+
 export const CardContainer = styled.a`
     color: white;
     display: flex;
@@ -10,6 +14,7 @@ export const CardContainer = styled.a`
     opacity: 0.85;
     transition: box-shadow 0.3s;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover {
         color: white;
@@ -48,9 +53,10 @@ export const Description = styled.h4`
     margin-bottom: 32px;
 `;
 
-export const Rarity = styled.div`
+export const Rarity = styled.div<{ color: string }>`
     margin-top: 0.5rem;
     font-size: 1.15rem;
+    color: ${({ color }: RarityProps) => color};
 `;
 
 export const Tags = styled.div`

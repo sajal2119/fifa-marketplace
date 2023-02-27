@@ -31,7 +31,9 @@ export const Cards: React.FC = () => {
                                 <DetailsContainer>
                                     <Title>{card.title}</Title>
                                     <Description>{card.subtitle}</Description>
-                                    <Rarity>{card.rarity.name}</Rarity>
+                                    <Rarity color={card.rarity.color}>
+                                        {card.rarity.name}
+                                    </Rarity>
                                     <Tags>{card.collection.name}</Tags>
                                     <PriceContainer>
                                         <PriceLabel>Starting at:</PriceLabel>

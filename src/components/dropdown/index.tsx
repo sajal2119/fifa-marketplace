@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { DropdownToggle, DropdownMenu, DropdownItem } from "./styled";
 import { useRouter } from "next/router";
 import { updateValueInSearch } from "src/redux/utils/functions";
-import { SORT_BY, SORT_DIRECTION } from "src/redux/defaults";
+import { SORT_BY, SORT_BY_FILTER, SORT_DIRECTION } from "src/redux/defaults";
 import data from "@public/meta.json";
+import { CHANGE_SORT_BY, LIST_FETCHED } from "@redux/actions/actionTypes";
 
 interface EnumSortItem {
     id: number | string;
@@ -29,7 +30,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
         (option) => selectedSorting === option.id,
     );
     const onChange = async (eventKey: string | null) => {
-        const name = "sortBy";
+        const name = SORT_BY_FILTER;
         const params = updateValueInSearch(name, eventKey || SORT_BY);
 
         router.push({
@@ -38,7 +39,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
         });
 
         dispatch({
-            type: "CHANGE_SORT_BY",
+            type: CHANGE_SORT_BY,
             payload: {
                 sortBy: eventKey || SORT_BY,
                 sortDirection: SORT_DIRECTION,
@@ -47,7 +48,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
 
         setTimeout(() => {
             dispatch({
-                type: "LIST_FETCHED",
+                type: LIST_FETCHED,
                 payload: {
                     ...data,
                 },

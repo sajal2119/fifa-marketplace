@@ -22,23 +22,27 @@ export const Tabs: React.FC<OwnProps> = ({
     selectedUnits = [],
     id = "",
 }) => {
-    console.log("Tabs", id, selectedUnits);
+    const formattedOptions = options.map((option) => {
+        const isFilled = selectedUnits.indexOf(option.code) > -1;
+        return { ...option, isFilled };
+    });
     return (
         <Wrapper className={className || ""}>
-            {options.map((option) => (
-                <BadgeUnit
-                    color={option.color}
-                    key={option.code + option.name}
-                    pill
-                    bg="info"
-                    onClick={() => {
-                        onSelect(id, option.code);
-                    }}
-                    filled={selectedUnits.indexOf(option.code) > -1}
-                >
-                    {option.name}
-                </BadgeUnit>
-            ))}
+            {process.browser &&
+                formattedOptions.map((option) => (
+                    <BadgeUnit
+                        color={option.color}
+                        key={option.code + option.name}
+                        pill
+                        bg="info"
+                        onClick={() => {
+                            onSelect(id, option.code);
+                        }}
+                        filled={option.isFilled ? 1 : 0}
+                    >
+                        {option.name}
+                    </BadgeUnit>
+                ))}
         </Wrapper>
     );
 };

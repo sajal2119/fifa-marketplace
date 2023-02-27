@@ -5,6 +5,11 @@ import { useRouter } from "next/router";
 import { updateValueInSearch } from "@redux/utils/functions";
 import { FilterLabel, FilterUnit, Wrapper } from "./styled";
 import data from "@public/meta.json";
+import {
+    CHANGE_PACK_SLUGS,
+    CHANGE_RARITIES,
+    LIST_FETCHED,
+} from "@redux/actions/actionTypes";
 
 export const Filters: React.FC = () => {
     const dispatch = useDispatch();
@@ -36,13 +41,13 @@ export const Filters: React.FC = () => {
         });
 
         dispatch({
-            type: name === "rarities" ? "CHANGE_RARITIES" : "CHANGE_PACK_SLUGS",
+            type: name === "rarities" ? CHANGE_RARITIES : CHANGE_PACK_SLUGS,
             payload,
         });
 
         setTimeout(() => {
             dispatch({
-                type: "LIST_FETCHED",
+                type: LIST_FETCHED,
                 payload: {
                     ...data,
                 },

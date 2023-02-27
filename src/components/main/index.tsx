@@ -9,6 +9,7 @@ import {
     SortContainer,
 } from "./styled";
 import { Filters } from "@components/filters";
+import { Pagination } from "@components/pagination";
 
 export const Main: React.FC = () => {
     return (
@@ -41,6 +42,7 @@ export const Main: React.FC = () => {
                 <Filters />
                 <Cards />
             </ListingWrapper>
+            <Pagination />
         </Container>
     );
 };
