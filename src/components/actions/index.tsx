@@ -14,6 +14,7 @@ export const Actions: React.FC<OwnProps> = ({ className }) => {
                 width="24"
                 height="24"
                 className="d-xs-none"
+                style={{ cursor: "pointer" }}
             />
             <ActionLink variant="link" size="lg" href="/" target="_blank">
                 Sign in

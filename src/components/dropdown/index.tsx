@@ -3,7 +3,7 @@ import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { DropdownToggle, DropdownMenu, DropdownItem } from "./styled";
 import { useRouter } from "next/router";
-import { updateValueInQuery } from "src/redux/utils/functions";
+import { updateValueInSearch } from "src/redux/utils/functions";
 import { SORT_BY, SORT_BY_FILTER, SORT_DIRECTION } from "src/redux/defaults";
 import data from "@public/meta.json";
 import { CHANGE_SORT_BY, LIST_FETCHED } from "@redux/actions/actionTypes";
@@ -31,7 +31,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
     );
     const onChange = async (eventKey: string | null) => {
         const name = SORT_BY_FILTER;
-        const params = updateValueInQuery(name, eventKey || SORT_BY);
+        const params = updateValueInSearch(name, eventKey || SORT_BY);
 
         router.push({
             pathname: location.pathname,

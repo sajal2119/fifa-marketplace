@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface BadgeUnitProps {
+interface RarityProps {
     color: string;
 }
 

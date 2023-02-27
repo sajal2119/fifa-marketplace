@@ -1,41 +1,35 @@
+import { Logo } from "@components/logo";
 import React from "react";
 
 import {
-    PankodIcon,
-    GithubIcon,
-    TwitterIcon,
-    YoutubeIcon,
-    LinkedinIcon,
-} from "@components/icons";
+    Wrapper,
+    LinksWrapper,
+    Links,
+    PoweredBy,
+    PoweredByImg,
+    SectionWrapper,
+} from "./styled";
 
 export const Footer: React.FC = () => {
     return (
-        <div
-            className="text-center py-4"
-            style={{ backgroundColor: "#282c34" }}
-        >
-            <a
-                href="https://github.com/pankod"
-                target="_blank"
-                className="d-block mb-3"
-            >
-                <PankodIcon color="white" width="140" height="28" />
-            </a>
-
-            <ul className="d-flex justify-content-center list-unstyled p-0 m-0">
-                <li className="mx-2">
-                    <GithubIcon color="white" width="28" height="29" />
-                </li>
-                <li className="mx-2">
-                    <TwitterIcon color="white" width="28" height="28" />
-                </li>
-                <li className="mx-2">
-                    <YoutubeIcon color="white" width="28" height="29" />
-                </li>
-                <li className="mx-2">
-                    <LinkedinIcon color="white" width="28" height="32" />
-                </li>
-            </ul>
-        </div>
+        <Wrapper className="text-center py-4">
+            <SectionWrapper>
+                <Logo />
+                <LinksWrapper>
+                    <Links>Terms of Service</Links>
+                    <Links>Privacy Policy</Links>
+                    <Links>Cookie Settings</Links>
+                    <Links className="text-only">
+                        Copyright © 1994-2022 FIFA. All Rights Reserved
+                    </Links>
+                    <Links className="text-only">Version v1.21.2</Links>
+                </LinksWrapper>
+            </SectionWrapper>
+            <PoweredBy>
+                <p>Powered By</p>
+                <PoweredByImg src="https://collect.fifa.com/images/logos/algorand.svg" />
+                <p>The Official Blockchain Platform of FIFA</p>
+            </PoweredBy>
+        </Wrapper>
     );
 };
