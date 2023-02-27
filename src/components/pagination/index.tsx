@@ -18,7 +18,7 @@ export const Pagination: React.FC<OwnProps> = ({ className }) => {
     const pageSize = useSelector((state: any) => state.listing.pageSize);
     const pageNumber = useSelector((state: any) => state.listing.pageNumber);
 
-    const onChange = async (eventKey: string | null) => {
+    const onChange = async (eventKey: string | number | null) => {
         const name = PAGE_NUMBER_FILTER;
         const params = updateValueInQuery(name, eventKey || PAGE_NUMBER);
 

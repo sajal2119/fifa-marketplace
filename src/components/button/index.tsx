@@ -1,13 +1,13 @@
 import React from "react";
 import { Button as BaseButton } from "react-bootstrap";
-import { Container } from "./styled";
+import { Wrapper } from "./styled";
 
 export type IButton = any;
 
 export const Button: React.FC<IButton> = ({ ...rest }) => {
     return (
-        <Container>
+        <Wrapper>
             <BaseButton {...rest} />
-        </Container>
+        </Wrapper>
     );
 };

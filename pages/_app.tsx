@@ -7,10 +7,11 @@ import store from "src/redux";
 import { appWithTranslation } from "@i18n";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
+    const CustomComponent = Component as any;
     return (
         <StyledThemeProvider>
             <Provider store={store}>
-                <Component {...pageProps} />
+                <CustomComponent {...pageProps} />
             </Provider>
         </StyledThemeProvider>
     );

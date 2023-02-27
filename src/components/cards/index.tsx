@@ -24,7 +24,7 @@ export const Cards: React.FC = () => {
         <Container className="my-5 flex-grow-1">
             {!fetchingList && (
                 <Row>
-                    {listings.map((card) => (
+                    {listings.map((card: any) => (
                         <Col md={4} key={card.uniqueCode} className="mb-3">
                             <CardContainer>
                                 <Image src={card.image} />

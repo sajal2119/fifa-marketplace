@@ -18,7 +18,7 @@ export const SearchInput: React.FC<OwnProps> = ({ className, label }) => {
     const searchTerm = useSelector((state: any) => state.listing.searchTerm);
     const [text, setText] = useState(searchTerm);
 
-    const onChange = async (event: React.FormEvent<HTMLInputElement>) => {
+    const onChange = async (event: React.KeyboardEvent<any>) => {
         const eventKey = text;
 
         if (event.charCode == 13) {
@@ -55,8 +55,11 @@ export const SearchInput: React.FC<OwnProps> = ({ className, label }) => {
                 value={text}
                 placeholder={`e.g. "Netherlands" or "USA"`}
                 onKeyPress={onChange}
-                onChange={(event: React.FormEvent<HTMLInputElement>) => {
-                    setText(event.target.value);
+                onChange={(event: React.FormEvent) => {
+                    const target = event.target as HTMLInputElement;
+                    if (target) {
+                        setText(target.value);
+                    }
                 }}
             />
         </Wrapper>
