@@ -13,7 +13,11 @@ import {
 import { SearchInput } from "@components/searchInput";
 import { PriceRange } from "@components/priceRange";
 
-export const Filters: React.FC = () => {
+interface OwnProps {
+    className?: string;
+}
+
+export const Filters: React.FC<OwnProps> = ({ className = "" }) => {
     const dispatch = useDispatch();
     const router = useRouter();
     const rarities = useSelector((state: any) => state.listing.rarities);
@@ -57,7 +61,7 @@ export const Filters: React.FC = () => {
         }, 1000);
     };
     return (
-        <Wrapper>
+        <Wrapper className={className}>
             <FilterUnit>
                 <SearchInput />
             </FilterUnit>

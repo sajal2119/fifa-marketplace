@@ -38,12 +38,6 @@ export const SectionWrapper = styled.section`
         align-items: center;
         flex-direction: column;
         margin: 0px 16px;
-
-        .nav-item:last-child {
-            a {
-                border-bottom: 0px;
-            }
-        }
     }
 `;
 
@@ -68,6 +62,7 @@ export const Links = styled.div`
         font-weight: 600;
         padding: 8px 0px;
         margin-right: 0px;
+        font-size: 0.95em;
     }
 `;
 

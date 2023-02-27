@@ -34,6 +34,15 @@ export const PaginationUnit = styled(Pagination.Item)`
         text-decoration: underline;
         color: white;
     }
+
+    @media (max-width: 576px) {
+        min-width: 50px;
+        > span {
+            min-width: 34px;
+            text-align: center;
+            margin: 0px 8px;
+        }
+    }
 `;
 
 export const PaginationWrap = styled(Pagination)`

@@ -28,8 +28,8 @@ export const Header: React.FC = () => {
                 onClick={handleShow}
             />
             <Logo />
-            <Navigation className={"d-none d-sm-block"} />
-            <Actions className={"d-none d-sm-block"} />
+            <Navigation className="d-none d-sm-block" />
+            <Actions className="d-none d-sm-block" />
             <UserIcon className="d-sm-none" width="24" height="24" />
             <OffcanvasWrapper
                 show={show}

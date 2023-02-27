@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    width: 100%;
 
     &.rectangular-tabs {
         max-width: 250px;
@@ -25,6 +26,18 @@ export const Wrapper = styled.div`
         -webkit-line-clamp: 2; /* number of lines to show */
         line-clamp: 2;
         -webkit-box-orient: vertical;
+    }
+
+    @media (max-width: 576px) {
+        width: 100%;
+
+        &.rectangular-tabs {
+            max-width: 100%;
+        }
+
+        > span {
+            line-height: 1.5rem;
+        }
     }
 `;
 

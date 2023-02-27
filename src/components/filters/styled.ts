@@ -9,6 +9,11 @@ export const Wrapper = styled.section`
     margin-top: 1.75rem;
     margin-bottom: 3rem;
     min-width: 250px;
+
+    @media (max-width: 576px) {
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
 `;
 
 export const FilterUnit = styled.div`
@@ -18,6 +23,12 @@ export const FilterUnit = styled.div`
     width: 100%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+
+    @media (max-width: 576px) {
+        align-items: center;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
 `;
 
 export const FilterLabel = styled.div`

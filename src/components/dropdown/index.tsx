@@ -1,7 +1,12 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { DropdownToggle, DropdownMenu, DropdownItem } from "./styled";
+import {
+    DropdownWrapper,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from "./styled";
 import { useRouter } from "next/router";
 import { updateValueInQuery } from "src/redux/utils/functions";
 import { SORT_BY, SORT_BY_FILTER, SORT_DIRECTION } from "src/redux/defaults";
@@ -57,7 +62,7 @@ export const CustomDropdown: React.FC<OwnProps> = ({
     };
 
     return (
-        <Dropdown className={className || ""} onSelect={onChange}>
+        <DropdownWrapper className={className || ""} onSelect={onChange}>
             <DropdownToggle variant="success" id="custom-dropdown">
                 {selectedOption[0].label}
             </DropdownToggle>
@@ -72,6 +77,6 @@ export const CustomDropdown: React.FC<OwnProps> = ({
                     </DropdownItem>
                 ))}
             </DropdownMenu>
-        </Dropdown>
+        </DropdownWrapper>
     );
 };

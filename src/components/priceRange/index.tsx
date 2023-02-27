@@ -63,6 +63,14 @@ export const PriceRange: React.FC<OwnProps> = ({ className }) => {
         }, 1000);
     };
 
+    let isApplyDisabled = false;
+
+    if (min < 0 || max < 0) {
+        isApplyDisabled = true;
+    } else if (min > max) {
+        isApplyDisabled = true;
+    }
+
     return (
         <Wrapper className={className || ""}>
             <Label>Low</Label>
@@ -72,9 +80,14 @@ export const PriceRange: React.FC<OwnProps> = ({ className }) => {
                     type="number"
                     value={min}
                     placeholder={MIN_PRICE}
-                    onChange={(event: React.FormEvent<HTMLInputElement>) => {
-                        setMin(event?.target?.value);
+                    onChange={(event: React.FormEvent) => {
+                        const target = event.target as HTMLInputElement;
+                        if (target) {
+                            setMin(target.value);
+                        }
                     }}
+                    min="0"
+                    max={max - 1}
                 />
             </CustomInputGroup>
             <Label>High</Label>
@@ -83,13 +96,22 @@ export const PriceRange: React.FC<OwnProps> = ({ className }) => {
                 <InputUnit
                     type="number"
                     value={max}
+                    min={min + 1}
                     placeholder={MAX_PRICE}
-                    onChange={(event: React.FormEvent<HTMLInputElement>) => {
-                        setMax(event?.target?.value);
+                    onChange={(event: React.FormEvent) => {
+                        const target = event.target as HTMLInputElement;
+                        if (target) {
+                            setMax(target.value);
+                        }
                     }}
                 />
             </CustomInputGroup>
-            <ActionButton variant="primary" size="lg" onClick={onChange}>
+            <ActionButton
+                variant="primary"
+                size="lg"
+                onClick={onChange}
+                disabled={isApplyDisabled}
+            >
                 APPLY
             </ActionButton>
         </Wrapper>

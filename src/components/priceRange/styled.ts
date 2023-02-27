@@ -30,6 +30,10 @@ export const Label = styled(Form.Label)`
     width: 100%;
     color: white;
     margin-top: 1.2rem;
+
+    @media (max-width: 576px) {
+        margin-top: 0.4rem;
+    }
 `;
 
 export const ActionButton = styled(Button)`
@@ -45,7 +49,7 @@ export const ActionButton = styled(Button)`
     }
 
     @media (max-width: 576px) {
-        font-size: 1.4em;
+        font-size: 1.1em;
         font-weight: 500;
         margin: 16px 0px;
     }
