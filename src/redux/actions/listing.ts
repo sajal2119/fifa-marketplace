@@ -2,6 +2,15 @@ import { LIST_FETCHED } from "./actionTypes";
 import { listingApi, API_URL } from "@network";
 import data from "@public/meta.json";
 
+/**
+ * Axios API wrapper to GET listings for filter/sorting/pagination updates
+ * Maintains API_URL and API call initiation
+ * Catches error for error handling in API calls
+ *
+ * @param {function} dispatch Thunk dispatcher function to be used on API success/failure
+ * @param {string} params Query params to be used for API calling
+ *
+ */
 const helperFunction = (dispatch: any, params: string) => {
     return listingApi({
         method: "get",
@@ -25,6 +34,16 @@ const helperFunction = (dispatch: any, params: string) => {
         });
 };
 
+/**
+ * Thunk powered function to make async API calls on action dispatches
+ * Dispatches action for store after async API calls
+ * Catches error for error handling in API calls
+ *
+ * @param {string} actionType Name of action to be dispatched before starting async operation
+ * @param {string} payload Payload to be dispatched in action before starting async operation
+ * @param {string} params Query params to be used for API calling
+ *
+ */
 export const changeFilters = (
     actionType: string,
     payload: Record<string, string | number | any>,

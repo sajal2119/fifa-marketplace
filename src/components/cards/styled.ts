@@ -82,3 +82,25 @@ export const PriceLabel = styled.div`
 export const Price = styled.div`
     font-weight: 700;
 `;
+
+export const NoResultLabel = styled.div`
+    color: white;
+    width: 100;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    border-top-width: 1px;
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 576px) {
+        font-size: 0.85rem;
+    }
+`;
+
+export const SpinnerWrapper = styled.div`
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+`;

@@ -11,6 +11,8 @@ import {
     PriceLabel,
     Price,
     Tags,
+    NoResultLabel,
+    SpinnerWrapper,
 } from "./styled";
 import { Container, Row, Col } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
@@ -45,7 +47,16 @@ export const Cards: React.FC = () => {
                     ))}
                 </Row>
             )}
-            {fetchingList && <Spinner animation="grow" variant="success" />}
+            {!fetchingList && listings && listings.length === 0 && (
+                <NoResultLabel>
+                    There are no products that match this filter criteria.
+                </NoResultLabel>
+            )}
+            {fetchingList && (
+                <SpinnerWrapper>
+                    <Spinner animation="grow" variant="success" />
+                </SpinnerWrapper>
+            )}
         </Container>
     );
 };

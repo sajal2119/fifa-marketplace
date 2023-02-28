@@ -203,7 +203,30 @@ Redux helps you write applications that behave consistently, run in different en
 [Documentation](https://redux.js.org/introduction/getting-started)
 
   
+### **Redux Thunk**
 
+  
+
+  
+
+Thunk middleware for Redux. It allows writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
+
+  
+
+[Documentation](https://redux.js.org/usage/writing-logic-thunks)
+
+  
+
+### **NextJS**
+
+  
+
+  
+Next. js is a React framework that enables several extra features, including server-side rendering and generating static websites. React is a JavaScript library that is traditionally used to build web applications rendered in the client's browser with JavaScript.
+
+  
+
+[Documentation](https://nextjs.org/)
   
 
 ### **next-i18next**
