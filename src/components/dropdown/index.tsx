@@ -1,5 +1,4 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
     DropdownWrapper,
@@ -10,8 +9,8 @@ import {
 import { useRouter } from "next/router";
 import { updateValueInQuery } from "src/redux/utils/functions";
 import { SORT_BY, SORT_BY_FILTER, SORT_DIRECTION } from "src/redux/defaults";
-import data from "@public/meta.json";
-import { CHANGE_SORT_BY, LIST_FETCHED } from "@redux/actions/actionTypes";
+import { changeFilters } from "@redux/actions";
+import { CHANGE_SORT_BY } from "@redux/actions/actionTypes";
 
 interface EnumSortItem {
     id: number | string;
@@ -43,28 +42,22 @@ export const CustomDropdown: React.FC<OwnProps> = ({
             search: params,
         });
 
-        dispatch({
-            type: CHANGE_SORT_BY,
-            payload: {
-                sortBy: eventKey || SORT_BY,
-                sortDirection: SORT_DIRECTION,
-            },
-        });
-
-        setTimeout(() => {
-            dispatch({
-                type: LIST_FETCHED,
-                payload: {
-                    ...data,
+        await dispatch(
+            changeFilters(
+                CHANGE_SORT_BY,
+                {
+                    sortBy: eventKey || SORT_BY,
+                    sortDirection: SORT_DIRECTION || "",
                 },
-            });
-        }, 1000);
+                params || "",
+            ),
+        );
     };
 
     return (
         <DropdownWrapper className={className || ""} onSelect={onChange}>
             <DropdownToggle variant="success" id="custom-dropdown">
-                {selectedOption[0].label}
+                {selectedOption && selectedOption[0] && selectedOption[0].label}
             </DropdownToggle>
             <DropdownMenu>
                 {options.map((option) => (

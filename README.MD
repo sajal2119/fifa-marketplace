@@ -17,13 +17,7 @@
   
 
 ```bash
-
-  
-
 yarn dev
-
-  
-
 ```
 
   
@@ -50,25 +44,7 @@ Sample URLs:
 
 - [Filtered-2](http://localhost:3000/?rarities=10&packSlugs=genesis-drop&sortBy=rarityCode&minPrice=99&maxPrice=9999999&packSlugs=trophies-drop)
 
-  
 
-  
-
-### Building for production.
-
-  
-
-  
-
-```bash
-
-  
-
-yarn build
-
-  
-
-```
 
   
 
@@ -81,17 +57,19 @@ yarn build
   
 
 ```bash
-
-  
-
 yarn start
-
-  
-
 ```
 
   
+### Building for production.
 
+  
+
+  
+
+```bash
+yarn build
+```
   
 
 ## Libraries/Frameworks used

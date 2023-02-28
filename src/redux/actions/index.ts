@@ -1,1 +1,1 @@
-export { changeSortBy, fetchList } from "./listing";
+export { changeFilters } from "./listing";

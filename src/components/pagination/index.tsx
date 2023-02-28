@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { PaginationUnit, PaginationWrap, Wrapper } from "./styled";
-import data from "@public/meta.json";
 import { updateValueInQuery } from "@redux/utils/functions";
 import { PAGE_NUMBER, PAGE_NUMBER_FILTER } from "@redux/defaults";
-import { CHANGE_PAGE_NUMBER, LIST_FETCHED } from "@redux/actions/actionTypes";
+import { CHANGE_PAGE_NUMBER } from "@redux/actions/actionTypes";
+import { changeFilters } from "@redux/actions";
 
 interface OwnProps {
     className?: string;
@@ -14,8 +14,6 @@ interface OwnProps {
 export const Pagination: React.FC<OwnProps> = ({ className }) => {
     const dispatch = useDispatch();
     const router = useRouter();
-    const total = useSelector((state: any) => state.listing.total);
-    const pageSize = useSelector((state: any) => state.listing.pageSize);
     const pageNumber = useSelector((state: any) => state.listing.pageNumber);
 
     const onChange = async (eventKey: string | number | null) => {
@@ -27,21 +25,15 @@ export const Pagination: React.FC<OwnProps> = ({ className }) => {
             search: params,
         });
 
-        dispatch({
-            type: CHANGE_PAGE_NUMBER,
-            payload: {
-                pageNumber: eventKey || PAGE_NUMBER,
-            },
-        });
-
-        setTimeout(() => {
-            dispatch({
-                type: LIST_FETCHED,
-                payload: {
-                    ...data,
+        await dispatch(
+            changeFilters(
+                CHANGE_PAGE_NUMBER,
+                {
+                    pageNumber: eventKey || PAGE_NUMBER,
                 },
-            });
-        }, 1000);
+                params || "",
+            ),
+        );
     };
 
     const items = [];

@@ -9,7 +9,6 @@ import {
     CustomInputGroup,
     CustomInputGroupText,
 } from "./styled";
-import data from "@public/meta.json";
 import { updateObjectInQuery } from "@redux/utils/functions";
 import {
     MIN_PRICE,
@@ -17,7 +16,8 @@ import {
     MIN_PRICE_FILTER,
     MAX_PRICE_FILTER,
 } from "@redux/defaults";
-import { CHANGE_PRICE_RANGE, LIST_FETCHED } from "@redux/actions/actionTypes";
+import { CHANGE_PRICE_RANGE } from "@redux/actions/actionTypes";
+import { changeFilters } from "@redux/actions";
 
 interface OwnProps {
     className?: string;
@@ -32,11 +32,11 @@ export const PriceRange: React.FC<OwnProps> = ({ className }) => {
     const [max, setMax] = useState(maxPrice);
 
     const onChange = async () => {
-        const minPrice = min;
-        const maxPrice = max;
+        const minPrice = Number(min);
+        const maxPrice = Number(max);
         const queryParams: Record<string, number> = {};
-        queryParams[MIN_PRICE_FILTER] = Number(minPrice);
-        queryParams[MAX_PRICE_FILTER] = Number(maxPrice);
+        queryParams[MIN_PRICE_FILTER] = minPrice;
+        queryParams[MAX_PRICE_FILTER] = maxPrice;
 
         const params = updateObjectInQuery(queryParams);
 
@@ -45,29 +45,23 @@ export const PriceRange: React.FC<OwnProps> = ({ className }) => {
             search: params,
         });
 
-        dispatch({
-            type: CHANGE_PRICE_RANGE,
-            payload: {
-                minPrice,
-                maxPrice,
-            },
-        });
-
-        setTimeout(() => {
-            dispatch({
-                type: LIST_FETCHED,
-                payload: {
-                    ...data,
+        await dispatch(
+            changeFilters(
+                CHANGE_PRICE_RANGE,
+                {
+                    minPrice,
+                    maxPrice,
                 },
-            });
-        }, 1000);
+                params || "",
+            ),
+        );
     };
 
     let isApplyDisabled = false;
 
-    if (min < 0 || max < 0) {
+    if (Number(min) < 0 || Number(max) < 0) {
         isApplyDisabled = true;
-    } else if (min > max) {
+    } else if (Number(min) > Number(max)) {
         isApplyDisabled = true;
     }
 

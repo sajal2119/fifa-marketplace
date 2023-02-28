@@ -4,12 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { updateValueInQuery } from "@redux/utils/functions";
 import { FilterLabel, FilterUnit, Wrapper } from "./styled";
-import data from "@public/meta.json";
-import {
-    CHANGE_PACK_SLUGS,
-    CHANGE_RARITIES,
-    LIST_FETCHED,
-} from "@redux/actions/actionTypes";
+import { changeFilters } from "@redux/actions";
+import { CHANGE_PACK_SLUGS, CHANGE_RARITIES } from "@redux/actions/actionTypes";
 import { SearchInput } from "@components/searchInput";
 import { PriceRange } from "@components/priceRange";
 
@@ -46,19 +42,13 @@ export const Filters: React.FC<OwnProps> = ({ className = "" }) => {
             search: params,
         });
 
-        dispatch({
-            type: name === "rarities" ? CHANGE_RARITIES : CHANGE_PACK_SLUGS,
-            payload,
-        });
-
-        setTimeout(() => {
-            dispatch({
-                type: LIST_FETCHED,
-                payload: {
-                    ...data,
-                },
-            });
-        }, 1000);
+        await dispatch(
+            changeFilters(
+                name === "rarities" ? CHANGE_RARITIES : CHANGE_PACK_SLUGS,
+                payload,
+                params || "",
+            ),
+        );
     };
     return (
         <Wrapper className={className}>

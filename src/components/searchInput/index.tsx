@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { InputUnit, Label, Wrapper } from "./styled";
-import data from "@public/meta.json";
 import { updateValueInQuery } from "@redux/utils/functions";
-import { SEARCH_TERM, SEARCH_TERM_FILTER } from "@redux/defaults";
-import { CHANGE_SEARCH_TERM, LIST_FETCHED } from "@redux/actions/actionTypes";
+import { SEARCH_TERM_FILTER } from "@redux/defaults";
+import { changeFilters } from "@redux/actions/listing";
+import { CHANGE_SEARCH_TERM } from "@redux/actions/actionTypes";
 
 interface OwnProps {
     className?: string;
@@ -30,21 +30,15 @@ export const SearchInput: React.FC<OwnProps> = ({ className, label }) => {
                 search: params,
             });
 
-            dispatch({
-                type: CHANGE_SEARCH_TERM,
-                payload: {
-                    pageNumber: eventKey,
-                },
-            });
-
-            setTimeout(() => {
-                dispatch({
-                    type: LIST_FETCHED,
-                    payload: {
-                        ...data,
+            await dispatch(
+                changeFilters(
+                    CHANGE_SEARCH_TERM,
+                    {
+                        searchTerm: eventKey,
                     },
-                });
-            }, 1000);
+                    params || "",
+                ),
+            );
         }
     };
 

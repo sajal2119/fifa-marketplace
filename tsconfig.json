@@ -25,6 +25,12 @@
       "@components": [
         "src/components"
       ],
+      "@network/*": [
+        "src/network/*"
+      ],
+      "@network": [
+        "src/network"
+      ],
       "@styles/*": [
         "src/styles/*"
       ],
